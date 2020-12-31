@@ -53,7 +53,7 @@ const CardComponent= ({name, capital, population, latlng, flag, onPress}) =>{
               <SvgUri width='100' height='80' uri={flag} />
           </View>
           <TouchableOpacity
-          onpress={()=>onPress()}
+          onPress={()=> onPress()}
           style={{backgroundColor:'blue',margin:10,padding:10}}
           >
              <Text style={{color:'white',textAlign:'center'}}>Capital Weather</Text>
@@ -68,7 +68,7 @@ const CardComponent= ({name, capital, population, latlng, flag, onPress}) =>{
 class CountryDetails extends Component {
     getWeather=(capital)=>{
         return fetch(
-            'http://api.weatherstack.com/current?%20access_key=70e4082f2ee55c2641aecc27b92ff102&query%20='+capital
+            'http://api.weatherstack.com/current?access_key=76a9a3cb13371d78f09aa388b93c95fe&QUERY='+capital
         )
         .then((response)=>response.json())
         .then((responseJson)=>this.props.navigation.navigate('CountryWeather',{
